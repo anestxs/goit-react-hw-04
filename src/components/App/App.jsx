@@ -28,6 +28,7 @@ export default function App() {
         const data = await fetchPhotos(query, page);
         const totalPages = data.total_pages;
         setShowBtn(totalPages && totalPages !== page);
+        console.log(showBtn);
         setArticles((prevArticles) => {
           return [...prevArticles, ...data.results];
         });
@@ -54,8 +55,7 @@ export default function App() {
     setOpenedImage(image);
   };
 
-  const openModal = (image) => {
-    setOpenedImage(image);
+  const openModal = () => {
     setModalIsOpened(true);
   };
 
@@ -78,7 +78,7 @@ export default function App() {
         />
       )}
       {isError && <ErrorMessage />}
-      {articles.length > 0 && <LoadMoreBtn onClick={handleLoadMore} />}
+      {showBtn && <LoadMoreBtn onClick={handleLoadMore} />}
       {openedImage && (
         <ImageModal
           image={openedImage}

@@ -7,7 +7,7 @@ export default async function fetchPhotos(query, page) {
     params: {
       query,
       client_id: "sGQhfUfrcGC2TIWd2j-HqzgGv4P0IjBuYYiOIlEMSyI",
-      per_page: 2,
+      per_page: 5,
       page,
     },
   });
