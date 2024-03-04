@@ -52,13 +52,14 @@ export default function App() {
 
   const handleOpenModal = (image) => {
     setOpenedImage(image);
-  };
-
-  const openModal = () => {
     setModalIsOpened(true);
   };
 
-  const closeModal = () => {
+  // const openModal = () => {
+  //   setModalIsOpened(true);
+  // };
+
+  const handleCloseModal = () => {
     setModalIsOpened(false);
   };
 
@@ -78,11 +79,11 @@ export default function App() {
       )}
       {isError && <ErrorMessage />}
       {showBtn && <LoadMoreBtn onClick={handleLoadMore} />}
-      {openedImage && (
+      {modalIsOpened && (
         <ImageModal
           image={openedImage}
-          isOpen={openModal}
-          onClose={closeModal}
+          isOpen={modalIsOpened}
+          onClose={handleCloseModal}
         />
       )}
     </>
