@@ -28,7 +28,6 @@ export default function App() {
         const data = await fetchPhotos(query, page);
         const totalPages = data.total_pages;
         setShowBtn(totalPages && totalPages !== page);
-        console.log(showBtn);
         setArticles((prevArticles) => {
           return [...prevArticles, ...data.results];
         });
