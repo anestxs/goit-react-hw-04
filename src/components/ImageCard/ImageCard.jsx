@@ -11,7 +11,7 @@ export default function ImageCard({ article, handleOpenModal }) {
           handleOpenModal(article.urls.regular);
         }}
         src={article.urls.small}
-        alt={article["alt_description"]}
+        alt={article.alt_description}
       />
     </li>
   );
